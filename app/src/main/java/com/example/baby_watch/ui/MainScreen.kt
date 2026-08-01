@@ -11,10 +11,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import com.example.baby_watch.ui.care.CareScreen
 import com.example.baby_watch.ui.home.HomeScreen
 import com.example.baby_watch.ui.navbar.BottomNavBar
 import com.example.baby_watch.ui.navbar.BottomNavTab
+import com.example.baby_watch.ui.sensors.SensorScreen
 import com.example.baby_watch.ui.settings.SettingsScreen
 import com.example.baby_watch.ui.things.LogScreen
 
@@ -35,7 +35,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
             Crossfade(targetState = selectedTab, label = "pageTransition") { tab ->
                 when (tab) {
                     BottomNavTab.Home -> HomeScreen()
-                    BottomNavTab.Care -> CareScreen()
+                    BottomNavTab.Sensors -> SensorScreen()
                     BottomNavTab.Log -> LogScreen()
                     BottomNavTab.Settings -> SettingsScreen()
                 }

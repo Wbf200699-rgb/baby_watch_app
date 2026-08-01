@@ -20,6 +20,7 @@ public class ring_and_vibration {
     private static boolean running = false;
     private static MediaPlayer mediaPlayer;
 
+    @SuppressWarnings("deprecation")
     public static void start(Context ctx) {
         if (running) {
             Log.w(TAG, "已在运行，跳过");
@@ -37,7 +38,11 @@ public class ring_and_vibration {
             vibrator = (Vibrator) ctx.getSystemService(Context.VIBRATOR_SERVICE);
         }
         long[] pattern = {0, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000};
-        vibrator.vibrate(VibrationEffect.createWaveform(pattern, 0));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createWaveform(pattern, 0));
+        } else {
+            vibrator.vibrate(pattern, 0);
+        }
 
         // 响铃 — 优先系统闹钟铃声，失败则用 MediaPlayer 播放默认提示音
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);

@@ -10,8 +10,6 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import com.example.baby_watch.data.ip.ip_ok
-import com.example.baby_watch.data.repository.Esp32CamConfig
 import com.example.baby_watch.service.keep_connecting.KeepAliveService
 import com.example.baby_watch.ui.MainScreen
 import com.example.baby_watch.ui.theme.Baby_watchTheme
@@ -24,8 +22,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        ip_ok.load(this)
-        Esp32CamConfig.load(this)
         requestNeededPermissions()
         startKeepAliveService()
 

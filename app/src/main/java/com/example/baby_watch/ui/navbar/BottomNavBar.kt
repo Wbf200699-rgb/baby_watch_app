@@ -15,8 +15,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Sensors
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.Spa
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,8 +40,8 @@ enum class BottomNavTab(
     val icon: ImageVector,
 ) {
     Home("首页", Icons.Default.Home),
-    Care("安抚", Icons.Default.Spa),
-    Log("日志", Icons.AutoMirrored.Filled.MenuBook),
+    Sensors("传感器", Icons.Default.Sensors),
+    Log("告警", Icons.AutoMirrored.Filled.MenuBook),
     Settings("设置", Icons.Default.Settings),
 }
 

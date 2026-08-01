@@ -1,5 +1,8 @@
 pluginManagement {
     repositories {
+        maven(url = "https://maven.aliyun.com/repository/google")
+        maven(url = "https://maven.aliyun.com/repository/gradle-plugin")
+        maven(url = "https://maven.aliyun.com/repository/public")
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -14,11 +17,12 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven(url = "https://maven.aliyun.com/repository/google")
         google()
+        maven(url = "https://maven.aliyun.com/repository/public")
         mavenCentral()
     }
 }
 
 rootProject.name = "baby_watch"
 include(":app")
- 
